@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.carta {
+  background-color: white;
+}
+
+
+header {
+  width: 100%;
+}
+
+
+.clearBut {
+  font-size: .8rem;
+  color: #606a70;
+  cursor: pointer;
+}
+
+.radioContainer {
+  height: 2.4rem;
+  border: #6c757d solid 1px;
+
+  &:focus-within {
+    background-color: #fafae0;
+    border: #c8cf64 solid 1.5px;
+  }
+
+}
+
+#repayment,
+#interOnly{
+  width: .7rem;
+  height: .7rem;
+}
+
+.buttonCalc {
+  background-color: #d9db30;
+  &:hover{
+    background-color: #f3f54ed7
+  }
+
+  &:active{
+    font-size: 1.1rem;
+  }
+}
+
+.calculate {
+  height: 2.5rem;
+}
+
+.calculate>svg {
+  height: 1rem;
+}
+
+.imgContainer {
+  width: 110%;
+}
+
+.results {
+  background-color: #133040;
+  position: relative;
+}
+
+.showRes,
+.pRes {
+  color: white;
+}
+
+.Modal {
+  background-color: #133040;
+  color: white;
+}
+
+.input1>span,
+.input2>span,
+.input3>span {
+  background-color: #e3f4fc;
+  color: #425a66;
+
+}
+
+.inLibra,
+.inYears,
+.inRate,
+.labelRadio {
+  color: #7a8388;
+}
+
+#inLibra,
+#inYears,
+#inRate{
+  cursor: pointer;
+  box-shadow: none;
+ border: none;
+
+}
+
+.input1,
+.input2,
+.input3{
+  border: solid 1px #819096;
+  border-radius: .3rem;
+  &:hover{
+    border: solid 1px black;
+  }
+  &:focus-within{
+    border: solid 1px #d4da2c;
+    background-color: #d4da2c;
+  }
+}
+
+.radioContainer{
+  cursor: pointer;
+  accent-color: #d4da2c;
+  &:hover{
+    border: solid 1px #d4da2c;
+  }
+}
+
+#repayment{
+  background-color: #0e2431;
+}
+
+.resultModal {
+  background-color: #0e2431;
+  border-top: #dcde30 solid 3px;
+}
+
+.tModal {
+  color: #82a1b3;
+}
+
+.pModal {
+  color: #82a1b3;
+}
+
+.totalMonth {
+  color: #d9dc33;
+  font-size: 3rem;
+}
+
+.totalYear {
+  width: 100%;
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+}
+
+.result1>span {
+  color: #82a1b3;
+}
+
+.result2>span {
+  color: #82a1b3;
+}
+
+#output{
+  color: white;
+}
+
+@media(min-width: 750px) {
+
+  #container {
+    background-color: #e3f4fc;
+    height: 100vh;
+  }
+  #form1{
+    padding: 1rem;
+  }
+
+  .carta {
+    align-items: center;
+    height: 70%;
+    width: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .inMid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .input2,
+  .input3{
+    width: 98%;
+  }
+
+  .results {
+    background-color: #133040;
+    position: relative;
+    width: 100%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Modal {
+    height: 100%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 4rem;
+  }
+
+}
+
+@media(max-width: 750px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .form1 {
+    flex-direction: column;
+  }
+
+  .carta {
+    flex-direction: column;
+    margin-top: 2rem;
+
+  }
+}
+
