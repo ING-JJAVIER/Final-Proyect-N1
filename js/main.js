@@ -29,7 +29,7 @@ form.addEventListener('submit',
         const format = new FormData(form)
         let libra = parseFloat(format.get('libra').replace(/,/, ''))
         let years = parseFloat(format.get('years').replace(/,/, '') * 12)
-        let rate = parseFloat(format.get('rate') / 100)
+        let rate = parseFloat(format.get('rate') / 12)
 
         let pay = calculate(libra, years, rate)
 
@@ -96,7 +96,7 @@ calcBtn.addEventListener('click',
             } else {
                 modal.classList.remove('visually-hidden')
                 res.textContent = `${total}`
-                tot.textContent = `${total}`
+                tot.textContent = `${total.toFixed(2)}`
 
 
             }
@@ -117,10 +117,10 @@ clearButton.addEventListener('click', () => {
     /* Functions */
 
     function calculate(libra, years, rate) {
-        r = ((rate * libra / 12));
+        r = ((rate / 100));
         n = ((1 + r) ** years);
         m = (((libra * r) * (n)) / ((n) - 1)).toFixed(2);
-        interestOnly = (m - libra).toFixed(2);
+        interestOnly = (libra -m).toFixed(2);
         total = (m * years)
 
     }
