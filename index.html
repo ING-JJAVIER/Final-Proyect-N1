@@ -33,7 +33,7 @@
 
     <section class="carta d-flex   justify-content-center">
 
-      <form id="form1" class="w-100 d-flex flex-column p-4">
+      <form id="form1" class="w-100 d-flex flex-column p-4 needs-validation" novalidate>
         <header class="align-items-center">
           <h1 class="fs-5 m-0 mb-2">Mortgage Calculator</h1>
           <h6 id="clearBut" class="clearBut  text-decoration-underline">Clear All</h6>
@@ -43,18 +43,20 @@
           Mortgage Amount</label>
         <div class="input1 input-group">
           <span class="input-group-text fw-bold" id="inputIcon">£</span>
-          <input type="text" name="libra" class="form-control " required id="inLibra" value=""
-            placeholder="e. g: 1000">
+          <input type="text" name="libra" class="form-control " required id="inLibra" value="" placeholder="e. g: 1000">
         </div>
+        
 
         <div class="inMid">
           <div class="input2Cont">
             <label for="inYears" class="form-label mt-3 inYears">
               Mortgage Term</label>
             <div class="input2 input-group">
-              <input type="text" name="years" class="form-control" id="inYears" required value=""
-                placeholder="e-25">
+              <input type="text" name="years" class="form-control" id="inYears" required value="" placeholder="e-25">
               <span class="input-group-text iconYears text-end fw-bold">years</span>
+            </div>
+            <div class="invalid-feedback">
+              <span>Campo necesario</span>
             </div>
           </div>
 
@@ -62,9 +64,11 @@
             <label for="inRate" class="form-label mt-3 inRate">
               Interest Rate </label>
             <div class="input3 input-group">
-              <input type="text" name="rate" class="form-control" id="inRate" required value=""
-                placeholder="15">
+              <input type="text" name="rate" class="form-control" id="inRate" required value="" placeholder="15">
               <span class="input-group-text iconRate text-end fw-bold">%</span>
+            </div>
+            <div class="invalid-feedback">
+              <span>Campo necesario</span>
             </div>
           </div>
 
@@ -76,12 +80,18 @@
           <input type="radio" name="mortgageType" id="repayment" required value="repayment">
           <h6 class="m-0">Repayment</h6>
         </label>
+        <div class="invalid-feedback">
+          <span>Campo necesario</span>
+        </div>
 
         <label for="interOnly" id="interLabel"
           class="radioContainer w-100 d-flex align-items-center px-2  mb-3 gap-3 rounded-3">
           <input class="" type="radio" name="mortgageType" id="interOnly" value="interest">
           <h6 class="m-0">Interest Only</h6>
         </label>
+        <div class="invalid-feedback">
+          <span>Campo necesario</span>
+        </div>
 
         <div>
           <button type="submit"

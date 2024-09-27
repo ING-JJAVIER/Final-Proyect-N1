@@ -25,15 +25,12 @@ let total = null;
 form.addEventListener('submit',
     function (e) {
         e.preventDefault()
-
+        
         const format = new FormData(form)
         let libra = parseFloat(format.get('libra').replace(/,/, ''))
         let years = parseFloat(format.get('years').replace(/,/, '') * 12)
         let rate = parseFloat(format.get('rate') / 12)
-
         let pay = calculate(libra, years, rate)
-
-
     })
 
 inLibra.addEventListener('input', () => {
@@ -92,13 +89,11 @@ calcBtn.addEventListener('click',
             if (data === 'interest') {
                 modal.classList.remove('visually-hidden')
                 res.textContent = `${m}`
-                tot.textContent = `${total}`
+                tot.textContent = `${total.toFixed(2)}`
             } else {
                 modal.classList.remove('visually-hidden')
-                res.textContent = `${total}`
+                res.textContent = `${total.toFixed(2)}`
                 tot.textContent = `${total.toFixed(2)}`
-
-
             }
         }
 
@@ -114,13 +109,28 @@ clearButton.addEventListener('click', () => {
     modal.classList.add('visually-hidden');
 })
 
-    /* Functions */
+/* Functions */
 
-    function calculate(libra, years, rate) {
-        r = ((rate / 100));
-        n = ((1 + r) ** years);
-        m = (((libra * r) * (n)) / ((n) - 1)).toFixed(2);
-        interestOnly = (libra -m).toFixed(2);
-        total = (m * years)
+function calculate(libra, years, rate) {
+    r = ((rate / 100));
+    n = ((1 + r) ** years);
+    m = (((libra * r) * (n)) / ((n) - 1)).toFixed(2);
+    interestOnly = (libra - m).toFixed(2);
+    total = (m * years)
+}
 
-    }
+(function () {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
